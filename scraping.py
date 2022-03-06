@@ -101,7 +101,7 @@ def mars_facts():
     df.set_index('Description', inplace=True)
 
     # Convert dataframe into HTML format, add bootstrap
-    return df.to_html()
+    return df[1:].to_html().replace("dataframe","table table-hover").replace("<tr>\n      <th>Description</th>\n      <th></th>\n      <th></th>\n    </tr>\n","")
 
 def mars_hems(browser):
 
